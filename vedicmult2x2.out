@@ -1,0 +1,87 @@
+#! /c/Source/iverilog-install/bin/vvp
+:ivl_version "12.0 (devel)" "(s20150603-1539-g2693dd32b)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision - 12;
+:vpi_module "E:\iverilog\lib\ivl\system.vpi";
+:vpi_module "E:\iverilog\lib\ivl\vhdl_sys.vpi";
+:vpi_module "E:\iverilog\lib\ivl\vhdl_textio.vpi";
+:vpi_module "E:\iverilog\lib\ivl\v2005_math.vpi";
+:vpi_module "E:\iverilog\lib\ivl\va_math.vpi";
+S_000002337dae9cf0 .scope module, "vedicmult2x2_tb" "vedicmult2x2_tb" 2 3;
+ .timescale -9 -12;
+v000002337dae86a0_0 .var "a", 1 0;
+v000002337dae8740_0 .var "b", 1 0;
+v000002337dae87e0_0 .net "o", 3 0, L_000002337db45120;  1 drivers
+S_000002337daad0b0 .scope module, "uut" "vedicmult2x2" 2 8, 3 1 0, S_000002337dae9cf0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 2 "a";
+    .port_info 1 /INPUT 2 "b";
+    .port_info 2 /OUTPUT 4 "o";
+L_000002337dae9e80 .functor AND 1, L_000002337dae8880, L_000002337db44b80, C4<1>, C4<1>;
+L_000002337daa6e50 .functor AND 1, L_000002337db438c0, L_000002337db45620, C4<1>, C4<1>;
+L_000002337daf3280 .functor AND 1, L_000002337db44a40, L_000002337db43960, C4<1>, C4<1>;
+L_000002337daf38a0 .functor XOR 1, L_000002337daa6e50, L_000002337daf3280, C4<0>, C4<0>;
+L_000002337daf3590 .functor AND 1, L_000002337daa6e50, L_000002337daf3280, C4<1>, C4<1>;
+L_000002337daf3750 .functor AND 1, L_000002337db44f40, L_000002337db43b40, C4<1>, C4<1>;
+L_000002337daf37c0 .functor XOR 1, L_000002337daf3750, L_000002337daf3590, C4<0>, C4<0>;
+L_000002337daf3440 .functor AND 1, L_000002337daf3590, L_000002337daf3750, C4<1>, C4<1>;
+v000002337dae7ca0_0 .net *"_ivl_11", 0 0, L_000002337db45620;  1 drivers
+v000002337dae7c00_0 .net *"_ivl_15", 0 0, L_000002337db44a40;  1 drivers
+v000002337dae81a0_0 .net *"_ivl_17", 0 0, L_000002337db43960;  1 drivers
+v000002337dae7fc0_0 .net *"_ivl_22", 0 0, L_000002337daf38a0;  1 drivers
+v000002337dae7d40_0 .net *"_ivl_27", 0 0, L_000002337db44f40;  1 drivers
+v000002337dae8560_0 .net *"_ivl_29", 0 0, L_000002337db43b40;  1 drivers
+v000002337dae8100_0 .net *"_ivl_3", 0 0, L_000002337dae8880;  1 drivers
+v000002337dae8380_0 .net *"_ivl_34", 0 0, L_000002337daf37c0;  1 drivers
+v000002337dae8240_0 .net *"_ivl_39", 0 0, L_000002337daf3440;  1 drivers
+v000002337dae8600_0 .net *"_ivl_5", 0 0, L_000002337db44b80;  1 drivers
+v000002337dae82e0_0 .net *"_ivl_6", 0 0, L_000002337dae9e80;  1 drivers
+v000002337dae7de0_0 .net *"_ivl_9", 0 0, L_000002337db438c0;  1 drivers
+v000002337dae8920_0 .net "a", 1 0, v000002337dae86a0_0;  1 drivers
+v000002337dae7e80_0 .net "b", 1 0, v000002337dae8740_0;  1 drivers
+v000002337dae8420_0 .net "o", 3 0, L_000002337db45120;  alias, 1 drivers
+v000002337dae84c0_0 .net "w0", 0 0, L_000002337daa6e50;  1 drivers
+v000002337dae89c0_0 .net "w1", 0 0, L_000002337daf3280;  1 drivers
+v000002337dae8060_0 .net "w2", 0 0, L_000002337daf3590;  1 drivers
+v000002337dae8b00_0 .net "w3", 0 0, L_000002337daf3750;  1 drivers
+L_000002337dae8880 .part v000002337dae86a0_0, 0, 1;
+L_000002337db44b80 .part v000002337dae8740_0, 0, 1;
+L_000002337db438c0 .part v000002337dae86a0_0, 1, 1;
+L_000002337db45620 .part v000002337dae8740_0, 0, 1;
+L_000002337db44a40 .part v000002337dae86a0_0, 0, 1;
+L_000002337db43960 .part v000002337dae8740_0, 1, 1;
+L_000002337db44f40 .part v000002337dae86a0_0, 1, 1;
+L_000002337db43b40 .part v000002337dae8740_0, 1, 1;
+L_000002337db45120 .concat8 [ 1 1 1 1], L_000002337dae9e80, L_000002337daf38a0, L_000002337daf37c0, L_000002337daf3440;
+    .scope S_000002337dae9cf0;
+T_0 ;
+    %vpi_call 2 16 "$monitor", "a=%b, b=%b, o=%b", v000002337dae86a0_0, v000002337dae8740_0, v000002337dae87e0_0 {0 0 0};
+    %pushi/vec4 0, 0, 2;
+    %store/vec4 v000002337dae86a0_0, 0, 2;
+    %pushi/vec4 0, 0, 2;
+    %store/vec4 v000002337dae8740_0, 0, 2;
+    %delay 10000, 0;
+    %pushi/vec4 1, 0, 2;
+    %store/vec4 v000002337dae86a0_0, 0, 2;
+    %pushi/vec4 1, 0, 2;
+    %store/vec4 v000002337dae8740_0, 0, 2;
+    %delay 10000, 0;
+    %pushi/vec4 2, 0, 2;
+    %store/vec4 v000002337dae86a0_0, 0, 2;
+    %pushi/vec4 2, 0, 2;
+    %store/vec4 v000002337dae8740_0, 0, 2;
+    %delay 10000, 0;
+    %pushi/vec4 3, 0, 2;
+    %store/vec4 v000002337dae86a0_0, 0, 2;
+    %pushi/vec4 3, 0, 2;
+    %store/vec4 v000002337dae8740_0, 0, 2;
+    %delay 10000, 0;
+    %vpi_call 2 24 "$finish" {0 0 0};
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "vedicmult2x2_tb.v";
+    "vedicmult2x2.v";
